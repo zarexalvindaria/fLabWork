@@ -1,37 +1,39 @@
 import java.util.Scanner;
 
-public class flabWork1
+public class fLabWork1
 {
 	public static void main(String[] args) 
 	{
 		Scanner input = new Scanner(System.in);
 		int gradeInput, gradeAccept, count;
-		count = 1;
 		gradeAccept = 21;
+		count = 0;
 		
-		for(int gradeVal = 1; gradeVal < gradeAccept; gradeVal++)
-			{	
-				System.out.print("Please input your Grade: ");
-				gradeInput = input.nextInt();
-				if (gradeInput > 50)
-					{
-						main(null);
-					}
-				else
-					{
-						break;
-					}
+		System.out.print("Please input your grade: ");
+		gradeInput = input.nextInt();
+		gradeLooping(gradeInput,gradeAccept, count);
 
-			};
-			
-			int total;
-			total = 0;
-			total += gradeInput;
-			float gradeAverage;
-			gradeAverage = (total/gradeVal);
-
-			System.out.print("The average of your grade inputs is " + gradeAverage + ".");
-			break;
+	}
+		
+	public static int gradeLooping(int grade, int accept, int countGradeInput)
+	{
+		for(int gradeVal = 1; gradeVal < accept ; gradeVal++)
+		{	
+			if (grade > 50)
+			{
+				int total;
+				total = 0;
+				total += grade;
+				main(null);
+				countGradeInput++;
+				float gradeAverage;
+				gradeAverage = total/countGradeInput;
+				System.out.print("The average of your grade inputs is " + gradeAverage + ".");
+				break;
+			}
+		}
+		
+		return grade;
 	}
 
 }
