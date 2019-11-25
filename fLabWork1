@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class flabWork1
 {
-
 	public static void main(String[] args) 
 	{
 		Scanner input = new Scanner(System.in);
-		int gradeInput, gradeAccept;
+		int gradeInput, gradeAccept, count;
+		count = 1;
 		gradeAccept = 21;
 		
 		for(int gradeVal = 1; gradeVal < gradeAccept; gradeVal++)
@@ -17,21 +17,21 @@ public class flabWork1
 					{
 						main(null);
 					}
-				
 				else
 					{
 						break;
 					}
-				
-				int total;
-				total = 0;
-				gradeInput += gradeInput;
-				float gradeAverage;
-				gradeAverage = (gradeInput/gradeAccept);
-				
-				System.out.print("The average of your grade inputs is " + gradeAverage + ".");
-				break;
+
 			};
+			
+			int total;
+			total = 0;
+			total += gradeInput;
+			float gradeAverage;
+			gradeAverage = (total/gradeVal);
+
+			System.out.print("The average of your grade inputs is " + gradeAverage + ".");
+			break;
 	}
 
 }
