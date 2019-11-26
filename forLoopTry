@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class MyClass 
+{
+    public static void main(String args[]) 
+    {
+      
+      int grade, counter, gradeAverage;
+      grade = 0;
+      
+      for (counter = 0; counter < 3; counter++)
+      {
+          Scanner input = new Scanner(System.in);
+          int gradeInput;
+          System.out.print("Please input your grade: ");
+          gradeInput = input.nextInt();
+          
+          if (gradeInput <= 50)
+          {
+              break;
+          }
+          
+        gradeInput += grade;
+      }
+      
+      gradeAverage = grade/counter;
+      
+      System.out.print("AVERAGE: " + gradeAverage);
+      
+      
+      
+    }
+}
