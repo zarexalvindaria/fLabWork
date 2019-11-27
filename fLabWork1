@@ -2,40 +2,58 @@
 
 import java.util.Scanner;
 
-public class fLabWork1
+public class forLoopTest 
+// This program accepts grade input for 20 times. It will stop once a user inputs a grade of 50 or less.
+
 {
-	public static void main(String[] args) 
-	{
-		Scanner input = new Scanner(System.in);
-		int gradeInput, gradeAccept, count;
-		gradeAccept = 21;
-		count = 0;
-		
-		System.out.print("Please input your grade: ");
-		gradeInput = input.nextInt();
-		gradeLooping(gradeInput,gradeAccept, count);
-
-	}
-		
-	public static int gradeLooping(int grade, int accept, int countGradeInput)
-	{
-		for(int gradeVal = 1; gradeVal < accept ; gradeVal++)
-		{	
-			if (grade > 50)
-			{
-				int total;
-				total = 0;
-				total += grade;
-				main(null);
-				countGradeInput++;
-				float gradeAverage;
-				gradeAverage = total/countGradeInput;
-				System.out.print("The average of your grade inputs is " + gradeAverage + ".");
-				break;
-			}
-		}
-		
-		return grade;
-	}
-
+    public static void main(String args[]) 
+    {
+      int grade, gradeInputCount, gradeInputAllowed;
+      float gradeAverage, gradeAverageRemainder, gradeAverageTotal;
+      grade = 0;
+      gradeInputAllowed = 20;
+      
+      for (gradeInputCount = 0; gradeInputCount < gradeInputAllowed; gradeInputCount++)
+      {
+          Scanner in = new Scanner(System.in);
+          int gradeInput;
+          System.out.print("Please input your grade: ");
+          gradeInput = in.nextInt();
+          
+          if (gradeInput <= 50)
+          {
+        	  System.out.println("You have input a grade 50 or below.");
+        	  System.out.println("Computing your grade now...");
+              break;
+          }
+        grade += gradeInput;
+      }
+      gradeAverage = grade/gradeInputCount;
+      gradeAverageRemainder = (float)(grade)%(float)(gradeInputCount)/(float)(gradeInputCount);
+      gradeAverageTotal = gradeAverage + gradeAverageRemainder;
+      System.out.print("\n");
+      System.out.print("Your grades' average is " + (gradeAverageTotal));
+      System.out.print("\n");
+      continueGradeInput();
+    }
+    
+    public static void continueGradeInput()
+    {
+        String continueOrNot;
+    	Scanner in = new Scanner(System.in);
+        System.out.print("\n");
+    	System.out.print("Do you want to input your grades again? Please type " + '"' + "yes" + '"' + " or " + '"' + "no" + '"' + ": ");
+    	continueOrNot = in.nextLine();
+    	continueOrNot = continueOrNot.toLowerCase();
+    	if (continueOrNot.equals("yes"))
+    	{
+    		System.out.print("\n");
+       		main(null);
+    	}
+    	
+    	else
+    	{
+    		System.out.print("This program ends here. Thank you for using my program!");
+    	}
+    }   
 }
