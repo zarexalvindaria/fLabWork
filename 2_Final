@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class fLabWork2 {
+
+	public static void main(String[] args) 
+	{
+		float numInputSum, numInput;
+		numInputSum = 0;
+		
+		for (numInput = 9; numInput%10!=0; numInput=numInput)
+		{ 
+			Scanner in = new Scanner(System.in);
+			System.out.print("Enter your lucky number: ");
+			numInput = in.nextInt();
+			if (numberComputation(numInput) == 0)
+			{
+				System.out.println("Your input is divisible by 10.");
+				System.out.print("\n");
+				break;
+			}
+			numInputSum += numInput;
+		}
+		
+		Scanner in = new Scanner(System.in);
+		String continueOrNot;
+		System.out.println("The sum of all your inputs is " + numInputSum);
+		System.out.print("\n");
+		System.out.print("Would you like to try again? Please type YES OR NO: ");
+		continueOrNot = in.nextLine();
+		continueOrNot = continueOrNot.toUpperCase();
+		if (continueOrNot.equals("YES"))
+		{
+			System.out.print("\n");
+			main(null);
+		}
+		
+		else
+		{
+			System.out.print("\n");
+			 for (int i = 0; i < 10; i++) 
+			 {
+				   for (int j = 0; j < 10 - i; j++)
+				    System.out.print(" ");
+				   for (int k = 0; k < (2 * i + 1); k++)
+				    System.out.print("*");
+				   System.out.println();
+			 }
+			 System.out.println("      *       *       ");
+			 System.out.print("      *       *       ");
+		}
+	}
+	
+	public static float numberComputation(float numberPassed)
+	{
+		return numberPassed%10;
+	}
+}
