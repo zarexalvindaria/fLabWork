@@ -11,13 +11,13 @@ public class fLabWork2 {
 			Scanner in = new Scanner(System.in);
 			System.out.print("Enter a number: ");
 			numberInput = in.nextInt();
-			numberSum += computerInputNumber(numberInput);
+			numberSum += computeInputNumber(numberInput);
 		}
 		System.out.println("The sum of all your inputs is " + numberSum);
 		tryAgain();
 	}
 	
-	public static float computerInputNumber(float numberPassed)
+	public static float computeInputNumber(float numberPassed)
 	{
 		float numberExecute;
 		String numberExecuteResult;
