@@ -6,19 +6,18 @@ public class fLabWork2 {
 	{
 		float numberSum;
 		numberSum = 0;
-		
 		for (float numberInput = 1; numberInput%10!=0; numberInput=numberInput)
 		{ 
 			Scanner in = new Scanner(System.in);
 			System.out.print("Enter a number: ");
 			numberInput = in.nextInt();
-			numberSum += numberComputation(numberInput);
+			numberSum += computerInputNumber(numberInput);
 		}
 		System.out.println("The sum of all your inputs is " + numberSum);
 		tryAgain();
 	}
 	
-	public static float numberComputation(float numberPassed)
+	public static float computerInputNumber(float numberPassed)
 	{
 		float numberExecute;
 		String numberExecuteResult;
@@ -30,6 +29,7 @@ public class fLabWork2 {
 			System.out.println("Your number is divisible by 10.");
 			System.out.print("\n");
 			break;
+			
 		default:
 			return numberPassed;
 		}
