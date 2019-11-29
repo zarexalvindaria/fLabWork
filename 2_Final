@@ -4,54 +4,70 @@ public class fLabWork2 {
 
 	public static void main(String[] args) 
 	{
-		float numInputSum, numInput;
-		numInputSum = 0;
+		float numberSum;
+		numberSum = 0;
 		
-		for (numInput = 9; numInput%10!=0; numInput=numInput)
+		for (float numberInput = 1; numberInput%10!=0; numberInput=numberInput)
 		{ 
 			Scanner in = new Scanner(System.in);
-			System.out.print("Enter your lucky number: ");
-			numInput = in.nextInt();
-			if (numberComputation(numInput) == 0)
-			{
-				System.out.println("Your input is divisible by 10.");
-				System.out.print("\n");
-				break;
-			}
-			numInputSum += numInput;
+			System.out.print("Enter a number: ");
+			numberInput = in.nextInt();
+			numberSum += numberComputation(numberInput);
 		}
-		
-		Scanner in = new Scanner(System.in);
-		String continueOrNot;
-		System.out.println("The sum of all your inputs is " + numInputSum);
-		System.out.print("\n");
-		System.out.print("Would you like to try again? Please type YES OR NO: ");
-		continueOrNot = in.nextLine();
-		continueOrNot = continueOrNot.toUpperCase();
-		if (continueOrNot.equals("YES"))
-		{
-			System.out.print("\n");
-			main(null);
-		}
-		
-		else
-		{
-			System.out.print("\n");
-			 for (int i = 0; i < 10; i++) 
-			 {
-				   for (int j = 0; j < 10 - i; j++)
-				    System.out.print(" ");
-				   for (int k = 0; k < (2 * i + 1); k++)
-				    System.out.print("*");
-				   System.out.println();
-			 }
-			 System.out.println("      *       *       ");
-			 System.out.print("      *       *       ");
-		}
+		System.out.println("The sum of all your inputs is " + numberSum);
+		tryAgain();
 	}
 	
 	public static float numberComputation(float numberPassed)
 	{
-		return numberPassed%10;
+		float numberExecute;
+		String numberExecuteResult;
+		numberExecute = numberPassed%10;
+		numberExecuteResult=Float.toString(numberExecute);
+		switch(numberExecuteResult)
+		{
+		case "0.0":
+			System.out.println("Your number is divisible by 10.");
+			System.out.print("\n");
+			break;
+		default:
+			return numberPassed;
+		}
+		return numberExecute;
+	}
+	
+	public static void tryAgain()
+	{
+		String continueOrNot;
+		Scanner in = new Scanner(System.in);
+		System.out.print("\n");
+		System.out.print("Would you like to try again? Please type YES OR NO: ");
+		continueOrNot = in.nextLine();
+		continueOrNot = continueOrNot.toUpperCase();
+			if (continueOrNot.equals("YES"))
+			{
+				System.out.print("\n");
+				main(null);
+			}
+
+			else
+			{
+				createChristmasTree();
+			}
+	}
+	
+	public static void createChristmasTree()
+	{
+		System.out.print("\n");
+		 for (int star = 0; star < 10; star++) 
+		 {
+			   for (int tree = 0; tree < 10 - star; tree++)
+			    System.out.print(" ");
+			   for (int christmasTree = 0; christmasTree < (2 * star + 1); christmasTree++)
+			    System.out.print("*");
+			   System.out.println();
+		 }
+		   System.out.println("       *******       ");
+
 	}
 }
