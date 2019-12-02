@@ -1,0 +1,46 @@
+import java.util.Scanner;
+public class fLabWork3 {
+
+	public static void main(String[] args) 
+	{
+		Scanner in = new Scanner(System.in);
+		int inputTime;
+		System.out.print("How many inputs will you make? ");
+		inputTime = in.nextInt();
+		int index = 0;
+		int grade[] = new int[inputTime];
+		
+		while (index < inputTime)
+		{
+			System.out.print("Enter grade: ");
+			grade[index] = in.nextInt();
+			
+			if (grade[index] >= 70)
+			{
+				System.out.println("Passing grade!");
+			}
+			
+			else
+			{
+				System.out.println("Failing grade!");
+			}
+			index++;
+		}
+
+		String tryAgain;
+		System.out.print("Do you want to try again? Please type YES OR NO: ");
+		tryAgain = in.next();
+		tryAgain.toUpperCase();
+		
+		if (tryAgain.equals("YES"))
+		{
+			System.out.print("\n");
+			main(null);
+		}
+		else
+		{
+			System.out.print("Thanks for using my program. Goodbye!");
+		}
+	}
+
+}
