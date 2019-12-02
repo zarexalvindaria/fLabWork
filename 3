@@ -27,12 +27,11 @@ public class fLabWork3 {
 			index++;
 		}
 
-		String tryAgain;
-		System.out.print("Do you want to try again? Please type YES OR NO: ");
-		tryAgain = in.next();
-		tryAgain.toUpperCase();
+		char tryAgain;
+		System.out.print("Do you want to try again? Please type Y OR N: ");
+		tryAgain = in.next().charAt(0);
 		
-		if (tryAgain.equals("YES"))
+		if (tryAgain == 'Y' || tryAgain == 'y')
 		{
 			System.out.print("\n");
 			main(null);
