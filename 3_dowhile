@@ -1,19 +1,17 @@
 import java.util.Scanner;
-public class fLabWork3 
-{
+public class fLabWork3 {
 
 	public static void main(String[] args) 
 	{
-
 		Scanner in = new Scanner(System.in);
 		int inputTime;
+		int index = 0;
 		System.out.print("How many inputs will you make? ");
 		inputTime = in.nextInt();
-		int index = 0;
-		int grade[] = new int[inputTime];
 		
-		while (index < inputTime)
+		do
 		{
+			int grade[] = new int[inputTime];
 			System.out.print("Enter grade: ");
 			grade[index] = in.nextInt();
 			
@@ -28,19 +26,21 @@ public class fLabWork3
 			}
 			index++;
 		}
-
+		while (index < inputTime);
+		
 		char tryAgain;
+		System.out.print("\n");
 		System.out.print("Do you want to try again? Please type Y OR N: ");
 		tryAgain = in.next().charAt(0);
-		
-			do
-			{
+
+		if (tryAgain == 'Y' || tryAgain == 'y')
+		{
+			System.out.print("\n");
 			main(null);
-			} while(tryAgain == 'y' || tryAgain == 'Y');
-		
-		System.out.print("Thank you for using my program. Goodbye!");
-
-		
-
+		}
+		else
+		{
+			System.out.print("Thanks for using my program. Goodbye!");
+		}
 	}
 }
