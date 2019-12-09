@@ -1,0 +1,90 @@
+import java.util.Scanner;
+public class fQuiz1 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner in = new Scanner(System.in);
+		int inputTime, index;
+		index = 0;
+		inputTime = 20;
+		float number[] = new float[index];
+		int xx;
+		xx = 0;
+		
+		while (index <= inputTime)
+		{
+			System.out.print("Enter a number: ");
+			number[index] = in.nextFloat();
+			System.out.println(number[index]);
+			float[] arrayListing = {number[0],number[1],number[2],};
+			index++;
+			/*for(int x = 0; x < 3; ++x)
+				{
+					if(number[index] == arrayListing[xx])
+						{
+						System.out.println("Hey");
+						break;
+						}
+					else	
+						{
+							xx += x;
+						}
+					System.out.println(number[0] + number[1]);
+				}
+			
+			int x = 0; ++x;
+			
+			if(number[index] == arrayListing[xx])
+			{
+			System.out.println("Hey");
+			break;
+			}
+				else	
+			{
+				xx += x;
+			}
+			*/
+		}
+		
+		/*
+		for(int x = 0; x < 3; ++x)
+		{
+			System.out.print("Enter a number: ");
+			number[x] = in.nextFloat();
+			System.out.println(number[x]);
+			if(number[x] == number[index])
+				{
+				System.out.println("Hey");
+				break;
+				}
+			
+			else	
+				{
+					xx += x;
+					while (index <= 3)
+					{
+						System.out.print("Enter a number: ");
+						number[index] = in.nextFloat();
+						System.out.println(number[index]);
+						index++;
+					}
+					searchInputNumber(number[index]);
+				}
+		}*/
+	}
+
+		public static void searchInputNumber(float num)
+		{
+			if ((float) num/2 == 0.0)
+				{
+					System.out.print("Even");
+				}
+			
+			else
+				{
+					System.out.print("Odd");
+				}
+			return;
+		}
+}
