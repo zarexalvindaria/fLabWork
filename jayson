@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class fQuizTest
+{
+	public static void main(String[] args) 
+	{
+		int inputTime = 20;
+		int arrayNumbers[] = new int[inputTime];
+		int newInput = 0;
+		int index;
+		int searchIndex = 0;
+		Scanner in = new Scanner(System.in);
+		for (index = 0; index < inputTime; index++)
+		{
+			System.out.println("Enter a number: ");
+			int input = in.nextInt();
+			
+			if(input == 0) {
+				System.out.println("Zero is not allowed.");
+				System.exit(0);
+			}
+			
+			//Check if number exists in array
+			for(int i = 0; i < arrayNumbers.length; i++) {
+				if(arrayNumbers[i] == input) {
+					System.out.println("\n");
+					System.out.println(input + " number already exists.");
+					sortOddEven(arrayNumbers);
+					System.exit(0); // Stop the script. End the program
+				}
+			}//for
+			
+			//Push to array
+			arrayNumbers[index] = input;
+		}//for
+		
+		//Sor numbers after inputting
+		sortOddEven(arrayNumbers);
+	}//methon main
+	
+	public static void sortOddEven(int num[])
+	{
+		System.out.print("These are the even numbers: ");
+		for (int index = 0; index < num.length; index++)
+		{
+			if (num[index]%2== 0)
+			{
+				if(num[index] != 0) {
+					System.out.print(num[index] + " ");
+				}
+			}//if
+		}//for
+		
+		System.out.print("\n");
+		
+		System.out.print("These are the odd numbers: ");
+		for (int index = 0; index < num.length; index++)
+		{
+			if (num[index]%2!=0)
+			{
+				if(num[index] != 0) {
+					System.out.print(num[index] + " ");
+				}
+			}//if
+		}//for
+	}//method sortOddEven
+	
+}//class main
