@@ -1,0 +1,103 @@
+import java.util.Scanner;
+
+public class fLabWork4 
+{
+	public static void main(String[] args) 
+	{
+		int inputAllowed = 7;
+		
+		//start of midterm grade computation
+		float midtermSum;
+		float classParticipation;
+		midtermSum = 0;
+		float midtermGradeArray[] = new float[inputAllowed];
+		int index;
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("We will start computing your Midterm grade.");
+		for (index = 0; index < inputAllowed; index++)
+		{
+			System.out.println("Enter your midterm grade: ");
+			float input = in.nextInt();
+			midtermGradeArray[index] = input;
+			midtermSum = midtermSum + midtermGradeArray[index];
+		}//for midterm grades
+
+		classParticipation = (midtermSum / inputAllowed);
+		System.out.println("classParticipation: " + classParticipation);
+		
+		System.out.println("Enter your midterm exam grade: ");
+		float midtermExam = in.nextInt();
+		
+		float midtermGrade = (classParticipation * (float)(0.6)) + (midtermExam * (float)(0.4));
+		System.out.println("Midterm Grade: " + midtermGrade);
+		
+		System.out.println(getTermEquivalent(midtermGrade));
+		System.out.println("\n");
+		
+		//Start of Final Grade computation
+		float finalGradeArray[] = new float[inputAllowed];
+		float finalTermSum;
+		finalTermSum = 0;
+		float finalClassParticipation;
+		
+		System.out.println("Now, we will compute your Final term grade.");
+		for (index = 0; index < inputAllowed; index++)
+		{
+			System.out.println("Enter your final grade: ");
+			float input = in.nextInt();
+			finalGradeArray[index] = input;
+			finalTermSum = finalTermSum + finalGradeArray[index];
+		}//for
+
+		finalClassParticipation = (finalTermSum / inputAllowed);
+		System.out.println("finalClassParticipation: " + finalClassParticipation);
+		
+		System.out.println("Enter your final exam grade: ");
+		float finalTermExam = in.nextInt();
+		
+		float finalTermGrade = (finalClassParticipation * (float)(0.6)) + (finalTermExam * (float)(0.4));
+		System.out.println("Final Term Grade: " + finalTermGrade);
+		System.out.println(getTermEquivalent(finalTermGrade));
+		System.out.println("\n");
+		System.out.println("Your overall grade is " + ((getTermEquivalent(midtermGrade) + getTermEquivalent(finalTermGrade))/2));
+	}//main class
+	
+	public static float getTermEquivalent(float gradePassed)
+	{
+		float gradeEquivalent = 0;
+		if (gradePassed >=95 && gradePassed <=100)
+		{
+			gradeEquivalent = (float)4.0;
+		}
+		else if (gradePassed >= 91 && gradePassed <=94.9)
+		{
+			gradeEquivalent = (float) 3.5;
+		}
+		else if (gradePassed >= 87 && gradePassed <=90.9)
+		{
+			gradeEquivalent = (float) 3.0;
+		}
+		else if (gradePassed >= 83 && gradePassed <=86.9)
+		{
+			gradeEquivalent = (float) 2.5;
+		}
+		else if (gradePassed >= 79 && gradePassed <=82.9)
+		{
+			gradeEquivalent = (float) 2.0;
+		}
+		else if (gradePassed >= 75 && gradePassed <=78.9)
+		{
+			gradeEquivalent = (float) 1.5;
+		}
+		else if (gradePassed >= 70 && gradePassed <=74.9)
+		{
+			gradeEquivalent = (float) 1.0;
+		}
+		else
+		{
+			gradeEquivalent = (float) 0.0;
+		}
+		return gradeEquivalent;
+	}//gradeEquivalent Method
+}
