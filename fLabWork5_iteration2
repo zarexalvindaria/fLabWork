@@ -1,0 +1,110 @@
+package Labworkf5;
+//https://www.quickprogrammingtips.com/java/creating-multiplication-table-in-java.html
+
+import java.util.Scanner;
+
+public class fLabWork5 
+{
+	public static void main(String[] args) 
+	{
+		int selection;
+		Scanner in = new Scanner(System.in);
+		System.out.println("Select your operation"); //selection of the operation
+		System.out.print("\n");
+		System.out.println("1. Addition Table ");
+		System.out.print("\n");
+		System.out.println("2. Subtraction Table");
+		System.out.print("\n");
+		System.out.println("3. Multiplication Table");
+		System.out.print("\n");
+		System.out.println("4. Division Table");
+		System.out.print("\n");
+		System.out.print("Select here: ");
+		selection = in.nextInt();
+		
+		if (selection == 1)
+		{//creates the Addition table
+			System.out.println("You selected Addition Table.");
+			System.out.println("How many matrix?");
+			int addMatrix = in.nextInt();
+
+	        System.out.println();
+	        for(int index=0 ; index<=addMatrix; index++) 
+	        {
+	            for(int indexIncrement=0; indexIncrement<=addMatrix; indexIncrement++) 
+	            {
+	                System.out.format("%4d", index + indexIncrement);
+	            }//2nd for loop
+	           System.out.println();
+			}//1st for loop
+		}
+		else if (selection == 2)
+		{//Creates the subtraction table
+			System.out.println("You selected Subtraction Table.");
+			System.out.println("How many matrix?");
+			int subMatrix = in.nextInt();
+			
+	        for(int index = 0; index<=subMatrix; index++ ) 
+	        {
+	            System.out.format("%4d",index);
+	        }//first loop closing
+			
+	        System.out.println();
+	        for(int index1=1; index1<=subMatrix; index1++) 
+	        {
+	        	 System.out.format("%4d",index1);
+	            for(int indexIncrement=1; indexIncrement<=subMatrix; indexIncrement++) 
+	            {
+	                System.out.format("%4d",index1-indexIncrement);
+	            }//3rd for loop
+	           System.out.println();
+			}//2nd for loop
+		}
+		
+		else if (selection == 3)
+		{//Creates the multiplication table
+			System.out.println("You selected Multiplication Table.");
+			System.out.println("How many matrix?");
+			int multMatrix = in.nextInt();
+			
+	        System.out.println();
+	        for(int index=1 ; index<=multMatrix; index++) 
+	        {
+	            for(int indexIncrement=1; indexIncrement<=multMatrix; indexIncrement++) 
+	            {
+	                System.out.format("%4d", index*indexIncrement);
+	            }//2nd for loop
+	           System.out.println();
+	        }//1st for loop
+		}//else if multiplication
+		
+		else if (selection == 4)
+		{
+			System.out.println("You selected Division Table.");
+			System.out.println("How many matrix?");
+			int divMatrix = in.nextInt();
+			
+	        for(int index=1; index<=divMatrix; index++ ) 
+	        {
+	            System.out.format("%9d",index);
+	        }//first loop closing
+			
+	        System.out.println();
+	        for(int index1=1; index1<=divMatrix; index1++) 
+	        {
+	            for(float indexIncrement=1; indexIncrement<=divMatrix; indexIncrement++) 
+	            {
+	                System.out.format("%9f", index1/indexIncrement);
+	            }//2nd for loop
+	           System.out.println();
+	        }//1st for loop
+		}//else if division
+		else
+		{
+			System.out.println("You selected an invalid number! Please input 1 to 4 only!");
+			System.out.println("");
+			main(args);
+		}//else if other
+		in.close();
+	}
+}
