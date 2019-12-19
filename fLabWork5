@@ -1,3 +1,4 @@
+package Labworkf5;
 //https://www.quickprogrammingtips.com/java/creating-multiplication-table-in-java.html
 
 import java.util.Scanner;
@@ -8,7 +9,7 @@ public class fLabWork5
 	{
 		int selection;
 		Scanner in = new Scanner(System.in);
-		System.out.println("Select your operation");
+		System.out.println("Select your operation"); //selection of the operation
 		System.out.print("\n");
 		System.out.println("1. Addition Table ");
 		System.out.print("\n");
@@ -28,12 +29,12 @@ public class fLabWork5
 			int addMatrix = in.nextInt();
 
 	        System.out.println();
-	        for(int index=1 ; index<=addMatrix; index++) 
+	        for(int index=0 ; index<=addMatrix; index++) 
 	        {
 	            for(int indexIncrement=0; indexIncrement<=addMatrix; indexIncrement++) 
 	            {
 	                System.out.format("%4d", index + indexIncrement);
-	            }//2nd for loop 
+	            }//2nd for loop
 	           System.out.println();
 			}//1st for loop
 		}
@@ -44,9 +45,9 @@ public class fLabWork5
 			int subMatrix = in.nextInt();
 
 	        System.out.println();
-	        for(int index=1 ; index<=subMatrix; index++) 
+	        for(int index=0 ; index<=subMatrix; index++) 
 	        {
-	            for(int indexIncrement=1; indexIncrement<=subMatrix; indexIncrement++) 
+	            for(int indexIncrement=0; indexIncrement<=subMatrix; indexIncrement++) 
 	            {
 	                System.out.format("%4d", index - indexIncrement);
 	            }//2nd for loop 
@@ -78,7 +79,7 @@ public class fLabWork5
 			int divMatrix = in.nextInt();
 			
 	        System.out.println();
-	        for(float index=1 ; index<=divMatrix; index++) 
+	        for(float index=1; index<=divMatrix; index++) 
 	        {
 	            for(float indexIncrement=1; indexIncrement<=divMatrix; indexIncrement++) 
 	            {
