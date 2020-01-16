@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class fLabWork7 {
+	
+	public static void main(String[] args) 
+	{
+	Scanner in = new Scanner(System.in);
+	
+	int inputAllowed;
+	System.out.println("How many inputs do you want?"); //asking how many inputs will be provided
+	inputAllowed = in.nextInt();
+	String studentName[] = new String[inputAllowed];
+	int gradeArray[] = new int[inputAllowed];
+	
+	//start of student name inputs
+	for (int indexName = 0; indexName < inputAllowed; indexName++)
+	{
+		System.out.println("Enter the name of the student: ");
+		String nameInput = in.next();
+		studentName[indexName] = nameInput;
+	}//for student name
+	
+	for (int indexGrade = 0; indexGrade < inputAllowed; indexGrade++)
+	{
+		System.out.println("Enter the grade of the student: ");
+		int gradeInput = in.nextInt();
+		gradeArray[indexGrade] = gradeInput;
+	}//for student grade
+	
+	System.out.print("\n");
+	System.out.println("Output:");
+	
+	for (int index = 0; index < inputAllowed; index++)
+	{
+		System.out.print(studentName[index] + " = " + gradeArray[index] + " ");
+	}//for output of Student name and their designated grade
+	
+	in.close();
+	}
+}
