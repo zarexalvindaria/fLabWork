@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class fLabWork6 {
+
+	public static void main(String[] args) 
+	{
+		String firstName, lastName, age, tryAgain;
+		Scanner in = new Scanner(System.in);
+		tryAgain = "yes";
+		
+		while (tryAgain.equals("yes"))
+		{
+			System.out.println("Please enter your first name: "); //Asking for First Name
+			firstName = in.nextLine();
+
+			System.out.println("Please enter your last name: "); //Asking for last name
+			lastName = in.nextLine();
+			
+			System.out.println("Please enter your age: "); //Asking for age
+			age = in.nextLine();
+			
+			try{
+			    Integer.parseInt(age);
+			} catch(NumberFormatException ex){ //Handles the issue if user input a string
+			    System.out.println("Please input a valid age! Let's try again."); //Asks the user to input a valid age and start again.
+			    System.out.println("");
+			    main(null);
+			}
+		
+			System.out.println("Your name is " + firstName.toUpperCase() + " " + lastName.toUpperCase()); //prints the complete name
+			System.out.println("You are " + age + " years old."); //prints the age.
+			
+			System.out.println("Would you like to try again? Please type \"yes\" or \"no.\""); //Asks if users wants to try again
+			tryAgain = in.nextLine();
+			tryAgain = tryAgain.toLowerCase();
+		}
+
+		System.out.println("Thanks for using my program. Goodbye!");
+		System.exit(0); // end the program
+		in.close();
+	}
+
+}
